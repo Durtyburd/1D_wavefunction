@@ -4,6 +4,7 @@ import { getWaveVariables } from "./components/getWaveVariables.js";
 import { parameters } from "./components/parameters.js";
 import { defineArrays } from "./components/defineArrays.js";
 import { timeStep } from "./components/timeStep.js";
+import "./stylesheets/state.css";
 
 function State() {
   function handleClick(waveType) {
@@ -29,7 +30,7 @@ function State() {
   }
   return (
     <div>
-      <div>
+      <div className="div1">
         <h1>Do you want to simulate a light or a sound pulse?</h1>
         <button
           onClick={() => {
@@ -46,6 +47,8 @@ function State() {
           Sound
         </button>
       </div>
+
+      {/* <h2>time step</h2> add time step counter here  */}
     </div>
   );
 }

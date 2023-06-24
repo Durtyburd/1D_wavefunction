@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.js": "/wavefunction/static/js/main.738cb23a.js",
+    "main.css": "/wavefunction/static/css/main.d8557583.css",
+    "main.js": "/wavefunction/static/js/main.2f564213.js",
     "index.html": "/wavefunction/index.html",
-    "main.738cb23a.js.map": "/wavefunction/static/js/main.738cb23a.js.map"
+    "main.d8557583.css.map": "/wavefunction/static/css/main.d8557583.css.map",
+    "main.2f564213.js.map": "/wavefunction/static/js/main.2f564213.js.map"
   },
   "entrypoints": [
-    "static/js/main.738cb23a.js"
+    "static/css/main.d8557583.css",
+    "static/js/main.2f564213.js"
   ]
 }

@@ -14,21 +14,22 @@ function renderChart(frames, ibd, imax) {
   const data = [trace1, trace2];
 
   const layout = {
-    title: "Real-time Wave Function",
     xaxis: {
       title: "x",
       range: [1, imax],
+      fixedrange: true,
     },
     yaxis: {
       title: "u",
       range: [-1, 1],
+      fixedrange: true,
     },
-    height: 1000,
-    // width: "100vw",
+    plot_bgcolor: "antiquewhite",
+    paper_bgcolor: "antiquewhite",
   };
 
   // Create the initial graph
-  Plotly.newPlot("chart", data, layout).then(function () {
+  Plotly.newPlot("chart", data, layout, { responsive: true }).then(function () {
     // Animate the graph
     Plotly.animate("chart", frames, {
       frame: { duration: 50 },
