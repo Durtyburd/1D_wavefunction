@@ -2,11 +2,7 @@ import { State } from "./State.js";
 import React from "react";
 
 function App() {
-  return (
-    <div>
-      <State />
-    </div>
-  );
+  return <State />;
 }
 
 export default App;
