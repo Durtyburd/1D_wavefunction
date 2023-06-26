@@ -10,13 +10,8 @@ import {
   ListItemButton,
   ListItemText,
   Toolbar,
-  Typography,
   Button,
-  Paper,
 } from "@mui/material";
-
-// import MenuIcon from "@mui/icons-material/Menu";
-import "../stylesheets/navbarMain.css";
 
 import logo from "../images/1D.png";
 

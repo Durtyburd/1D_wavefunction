@@ -4,21 +4,7 @@ import { getWaveVariables } from "../functions/getWaveVariables.js";
 import { parameters } from "../functions/parameters.js";
 import { defineArrays } from "../functions/defineArrays.js";
 import { timeStep } from "../functions/timeStep.js";
-import {
-  AppBar,
-  Box,
-  CssBaseline,
-  Divider,
-  Drawer,
-  IconButton,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-  Toolbar,
-  Typography,
-  Button,
-} from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 function WaveGenerate() {
   function handleClick(waveType) {
@@ -45,19 +31,10 @@ function WaveGenerate() {
 
   return (
     <>
-      <Box sx={{ height: "50%" }}>
-        <Typography
-          variant="h2"
-          sx={{
-            padding: "5% 5% 3% 5%",
-            textAlign: "center",
-          }}
-        >
-          <strong>Wave Generator</strong>
+      <Box align="center" padding="5% 5% 5% 5%" backgroundColor="#ededeb">
+        <Typography variant="h4" padding="0% 0% 5% 0%">
+          Do you want to simulate a light or a sound pulse?
         </Typography>
-      </Box>
-      <Box align="center" padding="0% 5% 5% 5%">
-        <h1>Do you want to simulate a light or a sound pulse?</h1>
         <button
           onClick={() => {
             handleClick("l");
