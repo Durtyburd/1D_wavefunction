@@ -1,16 +1,9 @@
 body {
-  background-color: antiquewhite;
-}
-.div1 {
-  border-bottom: solid;
+  background-color: #002b5b;
 }
 
 h1 {
   font-size: 2em;
-}
-
-div {
-  text-align: center;
 }
 
 button {

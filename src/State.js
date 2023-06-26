@@ -1,9 +1,11 @@
 import React from "react";
-import { renderChart } from "./components/renderChart.js";
-import { getWaveVariables } from "./components/getWaveVariables.js";
-import { parameters } from "./components/parameters.js";
-import { defineArrays } from "./components/defineArrays.js";
-import { timeStep } from "./components/timeStep.js";
+import { renderChart } from "./functions/renderChart.js";
+import { getWaveVariables } from "./functions/getWaveVariables.js";
+import { parameters } from "./functions/parameters.js";
+import { defineArrays } from "./functions/defineArrays.js";
+import { timeStep } from "./functions/timeStep.js";
+import { Navbar } from "./components/Navbar.js";
+import About from "./components/About.js";
 import "./stylesheets/state.css";
 
 function State() {
@@ -30,7 +32,9 @@ function State() {
   }
   return (
     <div>
-      <div className="div1">
+      <Navbar />
+      <About />
+      <div>
         <h1>Do you want to simulate a light or a sound pulse?</h1>
         <button
           onClick={() => {
@@ -47,8 +51,6 @@ function State() {
           Sound
         </button>
       </div>
-
-      {/* <h2>time step</h2> add time step counter here  */}
     </div>
   );
 }

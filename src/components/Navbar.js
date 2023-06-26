@@ -1,0 +1,3 @@
+function Navbar() {}
+
+export { Navbar };

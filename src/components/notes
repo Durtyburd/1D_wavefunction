@@ -1,2 +1,0 @@
-add to package json build
-&& react-scripts build

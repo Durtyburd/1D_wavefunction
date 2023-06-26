@@ -22,7 +22,7 @@ export default {
         ],
       },
       {
-        test: /\.js$/,
+        test: /\.(js|jsx|mjs)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -35,6 +35,7 @@ export default {
         test: /\.css$/,
         use: [
           "style-loader",
+          "css-loader",
           {
             loader: "css-loader",
             options: {
