@@ -21,7 +21,7 @@ function renderChart(frames, ibd, imax) {
 
   const layout = {
     xaxis: {
-      title: "x",
+      title: "t",
       range: [1, imax],
       fixedrange: true,
       tickcolor: "black",
