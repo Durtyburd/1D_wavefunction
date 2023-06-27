@@ -16,7 +16,6 @@ import {
 import logo from "../images/1D.png";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
 
 function NavbarMain(props) {
   const { window } = props;
@@ -32,13 +31,29 @@ function NavbarMain(props) {
       <img src={logo} alt="1D Wave Function" />
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <ListItem disablePadding>
+          <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemText>
+              <a href="https://www.linkedin.com/in/sethperritt?challengeId=AQF9OECOD793ZgAAAYj-gwpfs6GrkGRWut6AjHBgiVK2FO9n5g76Q7fj40N1NwNKmvvZ7Ipz3mA139e6lCI-gNN_qn01DMm6wQ&submissionId=52b128f3-8a9d-6c17-0ee0-ceaa6d855023&challengeSource=AgHE4geJfxUEvgAAAYj-gzMDEfh1CqLP_Bw_NaHWqGp0wyXDogSAyJA9bmo2xHA&challegeType=AgFzIZtJigswawAAAYj-gzMGqQLwKCNHesRxxAIVxxyFoKjy_M91z5c&memberId=AgFEhmCFLrDyTwAAAYj-gzMJRSLbLfaAwyXx1nS9ksQng1g&recognizeDevice=AgF4JRx_G0uJYQAAAYj-gzMNxuMvSSalKguMlaC83bPouhu1nKqS">
+                LinkedIn
+              </a>
+            </ListItemText>
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemText>
+              <a href="https://github.com/Durtyburd?tab=repositories">Github</a>
+            </ListItemText>
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemText>
+              <a href="mailto:sethperritt@yahoo.com">Contact</a>
+            </ListItemText>
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
@@ -66,11 +81,18 @@ function NavbarMain(props) {
             <img src={logo} alt="1D Wave Function" />
           </Box>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: "black" }}>
-                {item}
-              </Button>
-            ))}
+            <a href="https://www.linkedin.com/in/sethperritt?challengeId=AQF9OECOD793ZgAAAYj-gwpfs6GrkGRWut6AjHBgiVK2FO9n5g76Q7fj40N1NwNKmvvZ7Ipz3mA139e6lCI-gNN_qn01DMm6wQ&submissionId=52b128f3-8a9d-6c17-0ee0-ceaa6d855023&challengeSource=AgHE4geJfxUEvgAAAYj-gzMDEfh1CqLP_Bw_NaHWqGp0wyXDogSAyJA9bmo2xHA&challegeType=AgFzIZtJigswawAAAYj-gzMGqQLwKCNHesRxxAIVxxyFoKjy_M91z5c&memberId=AgFEhmCFLrDyTwAAAYj-gzMJRSLbLfaAwyXx1nS9ksQng1g&recognizeDevice=AgF4JRx_G0uJYQAAAYj-gzMNxuMvSSalKguMlaC83bPouhu1nKqS">
+              {" "}
+              <Button sx={{ color: "black" }}>LinkedIn</Button>
+            </a>
+            <a href="https://github.com/Durtyburd?tab=repositories">
+              {" "}
+              <Button sx={{ color: "black" }}>Github</Button>
+            </a>
+            <a href="mailto:sethperritt@yahoo.com">
+              {" "}
+              <Button sx={{ color: "black" }}>Contact</Button>
+            </a>
           </Box>
         </Toolbar>
       </AppBar>

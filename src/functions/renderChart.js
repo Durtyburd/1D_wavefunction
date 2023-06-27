@@ -16,6 +16,7 @@ function renderChart(frames, ibd, imax) {
       color: "black",
     },
   };
+
   const data = [trace1, trace2];
 
   const layout = {
@@ -39,7 +40,9 @@ function renderChart(frames, ibd, imax) {
   };
 
   // Create the initial graph
-  Plotly.newPlot("chart", data, layout, { responsive: true }).then(function () {
+  Plotly.newPlot("chart", data, layout, {
+    responsive: true,
+  }).then(function () {
     // Animate the graph
     Plotly.animate("chart", frames, {
       color: "white",

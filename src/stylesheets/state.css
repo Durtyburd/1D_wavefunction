@@ -7,19 +7,19 @@ h1 {
 }
 
 button {
-  -webkit-border-radius: 54;
-  -moz-border-radius: 54;
-  border-radius: 54px;
-  font-family: Georgia;
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  font-family: Arial;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 30px;
   background: #000000;
-  padding: 7px 20px 10px 20px;
+  padding: 10px 20px 10px 20px;
   text-decoration: none;
-  margin-bottom: 25px;
+  margin: 0 1% 0 1%;
 }
 
 button:hover {
-  background: #616161;
+  background: #159895;
   text-decoration: none;
 }
