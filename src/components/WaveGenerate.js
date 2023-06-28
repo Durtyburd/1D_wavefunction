@@ -31,14 +31,14 @@ function WaveGenerate() {
 
   return (
     <>
-      <Box align="center" padding="5% 5% 5% 5%" backgroundColor="#ededeb">
+      <Box align="center" padding="10% 5% 8% 5%" backgroundColor="#ededeb">
         <Typography variant="h2" padding="0% 0% 5% 0%">
           <strong>Wave Generator</strong>
         </Typography>
         <Typography variant="h4" padding="0% 0% 5% 0%">
           Please choose a wave that you would like to see simulated.
         </Typography>
-        <Typography>
+        <Typography sx={{ paddingBottom: "5%" }}>
           *NOTE: The area on the left side of the vertical line represents air
           and the area on the right side represents water.*
         </Typography>

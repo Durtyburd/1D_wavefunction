@@ -18,6 +18,15 @@ function getWaveVariables(sim_flag, imax) {
         amp: 0.4, // source amplitude
         ibd: Math.round(imax / 4), // location of material boundary
       };
+    } else if (sim_flag === "cyo") {
+      /////////////////////////////////////////////////// <---- create your own wave???
+      return {
+        c: 0, // speed of your wave in water
+        cw: 0, // speed of your sound in air
+        f0: 0, // freq. of source [Hz]
+        amp: 0.4, // source amplitude
+        ibd: Math.round(imax / 0), // location of material boundary
+      };
     }
   }
 }

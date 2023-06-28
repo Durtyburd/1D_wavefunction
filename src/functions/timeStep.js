@@ -1,12 +1,14 @@
 import { dotPow, dotMultiply, pow } from "mathjs";
 
 function timeStep(amp, ibd, imax, dt, nmax, w, tau, t0, s1, s2, array) {
+  // x values
   const xArr = [];
+
   // FDTD time stepping loop
   for (let n = 1; n < nmax - 1; n++) {
     xArr.push(n);
-    // Define the source
 
+    // Define the source
     const t = dt * n - t0;
     const sourceValue = dotMultiply(
       amp * Math.sin(w * t),
@@ -41,8 +43,11 @@ function timeStep(amp, ibd, imax, dt, nmax, w, tau, t0, s1, s2, array) {
     }
   }
 
+  // removing first and last column of array
   array.shift();
   array.pop();
+
+  // initializing new array for chart y-values
   const newArr = [...array];
 
   // below assigns y-values
