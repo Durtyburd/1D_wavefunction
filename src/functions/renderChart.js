@@ -7,6 +7,7 @@ function renderChart(frames, ibd, imax) {
     line: {
       color: "black",
     },
+    name: " ",
   };
 
   let trace2 = {
@@ -15,6 +16,7 @@ function renderChart(frames, ibd, imax) {
     line: {
       color: "#1a5f7a",
     },
+    name: " ",
   };
 
   // Chart data
@@ -23,8 +25,10 @@ function renderChart(frames, ibd, imax) {
   // Chart layout
   const layout = {
     title: "Wave rendered...",
+    displayModeBar: false, // Remove the mode bar
+    font: { size: 18 },
     xaxis: {
-      title: "t",
+      title: "x",
       range: [1, imax],
       fixedrange: true,
       tickcolor: "black",
@@ -34,6 +38,7 @@ function renderChart(frames, ibd, imax) {
     yaxis: {
       title: "u",
       range: [-1, 1],
+      name: " ",
       fixedrange: true,
       tickcolor: "black",
       zerolinecolor: "#ededeb",
@@ -46,7 +51,7 @@ function renderChart(frames, ibd, imax) {
 
   // Create the initial graph
   Plotly.newPlot("chart", data, layout, {
-    // responsive: true,
+    responsive: true,
   }).then(function () {
     // Animate the graph
     Plotly.animate("chart", frames, {

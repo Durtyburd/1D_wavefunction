@@ -37,7 +37,7 @@ function NavbarMain(props) {
             <ListItemText>
               <Typography variant="h5">
                 <a href="https://github.com/Durtyburd/1D_wavefunction">
-                  Github
+                  GitHub
                 </a>
               </Typography>
             </ListItemText>
@@ -73,7 +73,7 @@ function NavbarMain(props) {
             <a href="https://github.com/Durtyburd/1D_wavefunction">
               {" "}
               <Button sx={{ color: "black", textTransform: "none" }}>
-                <Typography variant="h5">Github</Typography>
+                <Typography variant="h5">GitHub</Typography>
               </Button>
             </a>
           </Box>
