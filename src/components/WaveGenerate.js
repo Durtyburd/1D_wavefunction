@@ -1,9 +1,9 @@
 import React from "react";
-import { renderChart } from "../functions/renderChart.js";
-import { getWaveVariables } from "../functions/getWaveVariables.js";
-import { parameters } from "../functions/parameters.js";
-import { defineArrays } from "../functions/defineArrays.js";
-import { timeStep } from "../functions/timeStep.js";
+import { renderChart } from "../lib/renderChart.js";
+import { getWaveVariables } from "../lib/getWaveVariables.js";
+import { parameters } from "../lib/parameters.js";
+import { defineArrays } from "../lib/defineArrays.js";
+import { timeStep } from "../lib/timeStep.js";
 import { Box, Typography } from "@mui/material";
 
 function handleClick(waveType, passedC, passedCW, passedf0, passedAmp) {
@@ -16,7 +16,7 @@ function handleClick(waveType, passedC, passedCW, passedf0, passedAmp) {
     passedCW,
     passedf0,
     passedAmp
-  ); //good don't change
+  );
   const { dt, nmax, w, tau, t0, s1, s2 } = parameters(c, cw, f0, ibd, imax);
   const { array } = defineArrays(nmax, imax);
   const { frames } = timeStep(

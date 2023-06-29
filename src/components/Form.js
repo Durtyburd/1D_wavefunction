@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { TextField, Box } from "@mui/material";
-import "../stylesheets/form.css";
-
 import { handleClick } from "./WaveGenerate.js";
 
 function Form() {
+  // State for user-inputted wave variables
   const [stateC, setStateC] = useState(0);
   const [stateCW, setStateCW] = useState(0);
   const [statef0, setStatef0] = useState(0);
@@ -14,6 +13,7 @@ function Form() {
     <div style={{ marginTop: "3%" }}>
       <h2 align="center">Create your own wave</h2>
       <form
+        //On submit calls the handleClick function to begin wave rendering process
         onSubmit={(e) => {
           e.preventDefault();
           handleClick("cyo", stateC, stateCW, statef0, stateAmp);
@@ -31,7 +31,19 @@ function Form() {
             variant="outlined"
             color="primary"
             label="Speed in air - m/s"
-            onChange={(e) => setStateC(e.target.value)}
+            onChange={(e) => {
+              if (
+                (e.target.value > -1 && e.target.value <= 10e13) ||
+                e.target.value === "."
+              ) {
+                setStateC(e.target.value);
+              } else {
+                alert(
+                  "Please input a value between 1 and 100,000,000,000,000, but not 0."
+                );
+                e.target.value = 1;
+              }
+            }}
             required
           />
           <TextField
@@ -39,7 +51,19 @@ function Form() {
             variant="outlined"
             color="primary"
             label="Speed in water - m/s"
-            onChange={(e) => setStateCW(e.target.value)}
+            onChange={(e) => {
+              if (
+                (e.target.value > -1 && e.target.value <= 10e13) ||
+                e.target.value === "."
+              ) {
+                setStateCW(e.target.value);
+              } else {
+                alert(
+                  "Please input a value between 0 and 100,000,000,000,000, but not 0."
+                );
+                e.target.value = 1;
+              }
+            }}
             required
           />
         </Box>
@@ -55,7 +79,19 @@ function Form() {
             variant="outlined"
             color="primary"
             label="Frequency of source - Hz"
-            onChange={(e) => setStatef0(e.target.value)}
+            onChange={(e) => {
+              if (
+                (e.target.value > -1 && e.target.value <= 10e13) ||
+                e.target.value === "."
+              ) {
+                setStatef0(e.target.value);
+              } else {
+                alert(
+                  "Please input a value between 0 and 100,000,000,000,000, but not 0."
+                );
+                e.target.value = 1;
+              }
+            }}
             required
           />
           <TextField
@@ -70,7 +106,8 @@ function Form() {
               ) {
                 setStateAmp(e.target.value);
               } else {
-                alert("Please input a value between -1 and 1.");
+                alert("Please input a value between 0 and 1, but not 0.");
+                e.target.value = 0.1;
               }
             }}
             required
@@ -85,7 +122,7 @@ function Form() {
         </button>
         <p style={{ marginBottom: "8%" }}>
           *NOTE: When inputting your amplitude values. Please, keep the input
-          between -1 and 1.
+          between -1 and 1.*
         </p>
       </form>
     </div>
