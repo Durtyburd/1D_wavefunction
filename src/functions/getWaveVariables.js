@@ -1,4 +1,11 @@
-function getWaveVariables(sim_flag, imax) {
+function getWaveVariables(
+  sim_flag,
+  imax,
+  passedC,
+  passedCW,
+  passedf0,
+  passedAmp
+) {
   while (true) {
     if (sim_flag === "l") {
       console.log("ok this is light");
@@ -21,11 +28,11 @@ function getWaveVariables(sim_flag, imax) {
     } else if (sim_flag === "cyo") {
       /////////////////////////////////////////////////// <---- create your own wave???
       return {
-        c: 0, // speed of your wave in water
-        cw: 0, // speed of your sound in air
-        f0: 0, // freq. of source [Hz]
-        amp: 0.4, // source amplitude
-        ibd: Math.round(imax / 0), // location of material boundary
+        c: passedC, // speed of your wave in water
+        cw: passedCW, // speed of your sound in air
+        f0: passedf0, // freq. of source [Hz]
+        amp: passedAmp, // source amplitude
+        ibd: Math.round(imax / 5), // location of material boundary
       };
     }
   }
