@@ -31,6 +31,7 @@ function Form() {
             variant="outlined"
             color="primary"
             label="Speed in air - m/s"
+            sx={{ margin: "1% 1% 1% 1%" }}
             onChange={(e) => {
               if (
                 (e.target.value > -1 && e.target.value <= 10e13) ||
@@ -51,6 +52,7 @@ function Form() {
             variant="outlined"
             color="primary"
             label="Speed in water - m/s"
+            sx={{ margin: "1% 1% 1% 1%" }}
             onChange={(e) => {
               if (
                 (e.target.value > -1 && e.target.value <= 10e13) ||
@@ -79,6 +81,7 @@ function Form() {
             variant="outlined"
             color="primary"
             label="Frequency of source - Hz"
+            sx={{ margin: "1% 1% 1% 1%" }}
             onChange={(e) => {
               if (
                 (e.target.value > -1 && e.target.value <= 10e13) ||
@@ -99,6 +102,7 @@ function Form() {
             variant="outlined"
             color="primary"
             label="Source amplitude"
+            sx={{ margin: "1% 1% 1% 1%" }}
             onChange={(e) => {
               if (
                 (e.target.value >= -1 && e.target.value <= 1) ||
@@ -116,14 +120,10 @@ function Form() {
         <button
           color="primary"
           type="submit"
-          style={{ marginTop: "2%", marginBottom: "2%" }}
+          style={{ marginTop: "2%", marginBottom: "4%" }}
         >
           Generate
         </button>
-        <p style={{ marginBottom: "8%" }}>
-          *NOTE: When inputting your amplitude values. Please, keep the input
-          between -1 and 1.*
-        </p>
       </form>
     </div>
   );
