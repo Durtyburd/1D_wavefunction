@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TextField, Box } from "@mui/material";
+import { TextField, Box, Typography } from "@mui/material";
 import { handleClick } from "./WaveGenerate.js";
 
 function Form() {
@@ -124,6 +124,10 @@ function Form() {
         >
           Generate
         </button>
+        <Typography sx={{ paddingBottom: "5%" }}>
+          *NOTE: The area on the left side of the vertical line represents air
+          and the area on the right side represents water.*
+        </Typography>
       </form>
     </div>
   );
