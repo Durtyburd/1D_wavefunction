@@ -1,8 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { TextField, Box, Typography } from "@mui/material";
 import { handleClick } from "./WaveGenerate.js";
 
 function Form() {
+  function scroll() {
+    if (stateC == 0 || stateCW == 0 || stateAmp == 0 || statef0 == 0) {
+      alert("Please input values.");
+    } else {
+      ref.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+  const ref = useRef(null);
+
   // State for user-inputted wave variables
   const [stateC, setStateC] = useState(0);
   const [stateCW, setStateCW] = useState(0);
@@ -10,9 +19,10 @@ function Form() {
   const [stateAmp, setStateAmp] = useState(0);
 
   return (
-    <div style={{ marginTop: "3%" }}>
+    <div style={{ marginTop: "1%" }}>
       <h2 align="center">Create your own wave</h2>
       <form
+        display="flex"
         //On submit calls the handleClick function to begin wave rendering process
         onSubmit={(e) => {
           e.preventDefault();
@@ -117,17 +127,27 @@ function Form() {
             required
           />
         </Box>
-        <button
-          color="primary"
-          type="submit"
-          style={{ marginTop: "2%", marginBottom: "4%" }}
-        >
-          Generate
-        </button>
-        <Typography sx={{ paddingBottom: "5%" }}>
-          *NOTE: The area on the left side of the vertical line represents air
-          and the area on the right side represents water.*
-        </Typography>
+        <Box align="center">
+          <button
+            onClick={scroll}
+            color="primary"
+            type="submit"
+            style={{
+              alignSelf: "center",
+              marginTop: "1%",
+              marginBottom: "1%",
+            }}
+          >
+            Generate
+          </button>
+          <Typography
+            ref={ref}
+            sx={{ paddingBottom: "2%", alignSelf: "center" }}
+          >
+            *NOTE: The area on the left side of the vertical line represents air
+            and the area on the right side represents water.*
+          </Typography>
+        </Box>
       </form>
     </div>
   );

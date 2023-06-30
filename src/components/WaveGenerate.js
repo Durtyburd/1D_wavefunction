@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { renderChart } from "../lib/renderChart.js";
 import { getWaveVariables } from "../lib/getWaveVariables.js";
 import { parameters } from "../lib/parameters.js";
@@ -36,24 +36,30 @@ function handleClick(waveType, passedC, passedCW, passedf0, passedAmp) {
 }
 
 function WaveGenerate() {
+  function scroll() {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  }
+  const ref = useRef(null);
+
   return (
     <>
       <Box
         align="center"
-        padding="10% 5% 2% 5%"
+        padding="3% 5% 0 5%"
         backgroundColor="#ededeb"
         z-index="99"
       >
-        <Typography variant="h2" padding="0% 0% 5% 0%">
+        <Typography variant="h2" padding="0% 0% 2% 0%">
           <strong>Wave Generator</strong>
         </Typography>
-        <Typography variant="h4" padding="0% 0% 5% 0%">
+        <Typography variant="h4" padding="0% 0% 2% 0%">
           Please choose a wave that you would like to see simulated.
         </Typography>
         <br />
         <button
           onClick={() => {
             handleClick("l");
+            scroll();
           }}
         >
           Light
@@ -61,10 +67,12 @@ function WaveGenerate() {
         <button
           onClick={() => {
             handleClick("s");
+            scroll();
           }}
         >
           Sound
         </button>
+        <div ref={ref}></div>
       </Box>
     </>
   );
