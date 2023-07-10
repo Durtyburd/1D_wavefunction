@@ -41,7 +41,8 @@ function renderChart(frames, ibd, imax) {
       name: " ",
       fixedrange: true,
       tickcolor: "black",
-      zerolinecolor: "#ededeb",
+      zerolinecolor: "black",
+      zerolinewidth: 2, // Adjust the thickness of the zeroline
       color: "black",
       automargin: true,
     },
@@ -55,7 +56,7 @@ function renderChart(frames, ibd, imax) {
   }).then(function () {
     // Animate the graph
     Plotly.animate("chart", frames, {
-      color: "white",
+      color: "black",
       frame: { duration: 10 },
       transition: { duration: 1000 },
       mode: "immediate",
